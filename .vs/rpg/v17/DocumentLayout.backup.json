@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\menk1l\\Documents\\rpg\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4EC3EC9A-4B59-4FCA-87A5-94B2466F27B0}|rpg\\rpg.vcxproj|C:\\Users\\menk1l\\Documents\\rpg\\rpg\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4EC3EC9A-4B59-4FCA-87A5-94B2466F27B0}|rpg\\rpg.vcxproj|solutionrelative:rpg\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4EC3EC9A-4B59-4FCA-87A5-94B2466F27B0}|rpg\\rpg.vcxproj|C:\\Users\\menk1l\\Documents\\rpg\\rpg\\Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4EC3EC9A-4B59-4FCA-87A5-94B2466F27B0}|rpg\\rpg.vcxproj|solutionrelative:rpg\\Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4EC3EC9A-4B59-4FCA-87A5-94B2466F27B0}|rpg\\rpg.vcxproj|C:\\Users\\menk1l\\Documents\\rpg\\rpg\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4EC3EC9A-4B59-4FCA-87A5-94B2466F27B0}|rpg\\rpg.vcxproj|solutionrelative:rpg\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4EC3EC9A-4B59-4FCA-87A5-94B2466F27B0}|rpg\\rpg.vcxproj|C:\\Users\\menk1l\\Documents\\rpg\\rpg\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4EC3EC9A-4B59-4FCA-87A5-94B2466F27B0}|rpg\\rpg.vcxproj|solutionrelative:rpg\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4EC3EC9A-4B59-4FCA-87A5-94B2466F27B0}|rpg\\rpg.vcxproj|C:\\Users\\menk1l\\Documents\\rpg\\rpg\\Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -58,20 +58,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Character.cpp",
               "DocumentMoniker": "C:\\Users\\menk1l\\Documents\\rpg\\rpg\\Character.cpp",
               "RelativeDocumentMoniker": "rpg\\Character.cpp",
               "ToolTip": "C:\\Users\\menk1l\\Documents\\rpg\\rpg\\Character.cpp",
               "RelativeToolTip": "rpg\\Character.cpp",
-              "ViewState": "AgIAACEAAAAAAAAAAAAiwCMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-23T13:49:13.191Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T13:49:13.191Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\Users\\menk1l\\Documents\\rpg\\rpg\\Player.cpp",
               "RelativeDocumentMoniker": "rpg\\Player.cpp",
@@ -83,15 +82,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\menk1l\\Documents\\rpg\\rpg\\main.cpp",
               "RelativeDocumentMoniker": "rpg\\main.cpp",
               "ToolTip": "C:\\Users\\menk1l\\Documents\\rpg\\rpg\\main.cpp",
               "RelativeToolTip": "rpg\\main.cpp",
-              "ViewState": "AgIAABkAAAAAAAAAAAAiwDMAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAiwB4AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-23T13:47:06.551Z"
+              "WhenOpened": "2025-10-23T13:47:06.551Z",
+              "EditorCaption": ""
             }
           ]
         }
