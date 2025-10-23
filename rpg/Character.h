@@ -11,6 +11,7 @@ protected:
     float speed;
     float health;
     float attack;
+    float stateTimer;
 
     // Animation variables
     float animationTimer;
@@ -23,6 +24,8 @@ public:
     void Load();
     virtual void Update(float deltaTime);
     void Draw(sf::RenderWindow& window);
+    void Animation(float deltaTime, int frames, int Ypos);
+    void SingleFrame(int Ypos);
     std::string name;
     std::string dir;
     char currentDirection;

@@ -14,7 +14,7 @@ Character::Character() {
 	name = "Default";
 	dir = "Assets/Actor/Characters/";
 	currentState = IDLE;
-	currentDirection = 'd';
+	currentDirection = 'D';
 	isMoving = false;
 	animationTimer = 0.0f;
 	currentFrame = 0;
@@ -31,42 +31,105 @@ void Character::Load() {
 }
 
 void Character::Update(float deltaTime) {
-	if (currentState == WALK) {
-		animationTimer += deltaTime;
+	static State previousState = IDLE;
 
-		// Change frame every 0.15 seconds (150ms)
-		const float frameTime = 0.15f;
+	// Reset state timer when state changes
+	if (currentState != previousState) {
+		stateTimer = 0.0f;
+		previousState = currentState;
+	}
 
-		if (animationTimer >= frameTime) {
-			animationTimer -= frameTime;  // Keep remainder for smooth timing
+	// Increment state timer
+	stateTimer += deltaTime;
 
-			// Cycle through 4 walking frames (0, 1, 2, 3)
-			currentFrame = (currentFrame + 1) % 4;
-
-			switch (currentDirection) {
-			case 'D':
-				sprite.setTextureRect(sf::IntRect(0 * spriteSize, currentFrame * spriteSize, spriteSize, spriteSize));
-				break;
-			case 'U':
-				sprite.setTextureRect(sf::IntRect(1 * spriteSize, currentFrame * spriteSize, spriteSize, spriteSize));
-				break;
-			case 'L':
-				sprite.setTextureRect(sf::IntRect(2 * spriteSize, currentFrame * spriteSize, spriteSize, spriteSize));
-				break;
-			case 'R':
-				sprite.setTextureRect(sf::IntRect(3 * spriteSize, currentFrame * spriteSize, spriteSize, spriteSize));
-				break;
-
-			}
+	// Animations
+	if (currentState == IDLE) {
+		Animation(deltaTime, 1, 0);
+	}
+	else if (currentState == WALK) {
+		Animation(deltaTime, 4, 0);
+	}
+	else if (currentState == ATTACK) {
+		SingleFrame(4);
+		// After 0.2 seconds, return to IDLE
+		if (stateTimer >= 0.2f) {
+			currentState = IDLE;
+			stateTimer = 0.0f;
 		}
 	}
-	else if (currentState == IDLE) {
-		currentFrame = 0;
-		sprite.setTextureRect(sf::IntRect(0, 0, spriteSize, spriteSize));
+	else if (currentState == JUMP) {
+		SingleFrame(5);
+		if (stateTimer >= 0.2f) {
+			currentState = IDLE;
+			stateTimer = 0.0f;
+		}
 	}
+	else if (currentState == SPECIAL1) {
+		SingleFrame(6);
+	}
+	else if (currentState == SPECIAL2) {
+		SingleFrame(7);
+	}
+	else if (currentState == DEAD) {
+		SingleFrame(8);
+	}
+	else // IDLE
+		Animation(deltaTime, 1, 0);
+
 }
 
 void Character::Draw(sf::RenderWindow& window) {
 	window.draw(sprite);
+};
+
+void Character::Animation(float deltaTime, int frames, int Ypos) {
+    animationTimer += deltaTime;
+
+    // Change frame every 0.20 seconds
+    const float frameTime = 0.20f;
+
+    if (animationTimer >= frameTime) {
+        animationTimer -= frameTime;  // Keep remainder for smooth timing
+
+
+        // Cycle through n animation frames (0, 1, 2, 3)
+		if (frames == 1)
+			currentFrame = 0;
+		else
+			currentFrame = (currentFrame + 1) % frames;
+
+        switch (currentDirection) {
+        case 'D':
+			sprite.setTextureRect(sf::IntRect(0 * spriteSize, (Ypos + currentFrame) * spriteSize, spriteSize, spriteSize));
+            break;
+        case 'U':
+            sprite.setTextureRect(sf::IntRect(1 * spriteSize, (Ypos + currentFrame) * spriteSize, spriteSize, spriteSize));
+            break;
+        case 'L':
+            sprite.setTextureRect(sf::IntRect(2 * spriteSize, (Ypos + currentFrame) * spriteSize, spriteSize, spriteSize));
+            break;
+        case 'R':
+            sprite.setTextureRect(sf::IntRect(3 * spriteSize, (Ypos + currentFrame) * spriteSize, spriteSize, spriteSize));
+            break;
+        }
+    }
 }
+
+void Character::SingleFrame(int Ypos) {
+	switch (currentDirection) {
+	case 'D':
+		sprite.setTextureRect(sf::IntRect(0 * spriteSize, Ypos * spriteSize, spriteSize, spriteSize));
+		break;
+	case 'U':
+		sprite.setTextureRect(sf::IntRect(1 * spriteSize, Ypos * spriteSize, spriteSize, spriteSize));
+		break;
+	case 'L':
+		sprite.setTextureRect(sf::IntRect(2 * spriteSize, Ypos * spriteSize, spriteSize, spriteSize));
+		break;
+	case 'R':
+		sprite.setTextureRect(sf::IntRect(3 * spriteSize, Ypos * spriteSize, spriteSize, spriteSize));
+		break;
+	}
+}
+
 
