@@ -1,4 +1,5 @@
 #include "Character.h"
+#include "Math.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
@@ -8,6 +9,7 @@ Character::Character() {
 	Xindex = 0;
 	Yindex = 0;
 	spriteSize = 16;
+	sizeMultiplier = 5;
 	speed = 250;
 	health = 100;
 	attack = 5;
@@ -16,7 +18,6 @@ Character::Character() {
 	currentState = IDLE;
 	currentDirection = 'D';
 	isMoving = false;
-	animationTimer = 0.0f;
 	currentFrame = 0;
 }
 
@@ -25,12 +26,25 @@ void Character::Load() {
 		std::cout << name << " texture loaded" << '\n';
 		sprite.setTexture(texture);
 		sprite.setTextureRect(sf::IntRect(Xindex * spriteSize, Yindex * spriteSize, spriteSize, spriteSize));
-		sprite.scale(3, 3);
+		sprite.scale(sizeMultiplier , sizeMultiplier);
+		
+		// Collision rectangle
+		boundingRect.setSize(sf::Vector2f(spriteSize * sizeMultiplier, spriteSize * sizeMultiplier));
+		boundingRect.setFillColor(sf::Color::Transparent);
+		boundingRect.setOutlineColor(sf::Color::Red);
+		boundingRect.setOutlineThickness(1);
 	}
 	else std::cout << name << " texture failed load" << '\n';
 }
 
 void Character::Update(float deltaTime) {
+	// Saving positions
+	sf::Vector2f pos = sprite.getPosition();
+	boundingRect.setPosition(pos);
+	Xpos = sprite.getPosition().x;
+	Ypos = sprite.getPosition().y;
+
+
 	static State previousState = IDLE;
 
 	// Reset state timer when state changes
@@ -80,6 +94,7 @@ void Character::Update(float deltaTime) {
 
 void Character::Draw(sf::RenderWindow& window) {
 	window.draw(sprite);
+	window.draw(boundingRect);
 };
 
 void Character::Animation(float deltaTime, int frames, int Ypos) {

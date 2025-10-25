@@ -8,6 +8,7 @@ protected:
     int Xindex;
     int Yindex;
     int spriteSize;
+    int sizeMultiplier;
     float speed;
     float health;
     float attack;
@@ -30,6 +31,8 @@ public:
     std::string dir;
     char currentDirection;
     bool isMoving;
+    sf::RectangleShape boundingRect;
+
 
     enum State {
         IDLE,

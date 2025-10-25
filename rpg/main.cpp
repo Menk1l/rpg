@@ -3,6 +3,7 @@
 #include <vector>
 #include "Character.h"
 #include "Player.h"
+#include "Math.h"
 
 // Functions
 void move(char key, Character& player);
@@ -12,15 +13,10 @@ int main()
 {
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;
-    sf::RenderWindow window(sf::VideoMode(800, 600), "RPG", sf::Style::Default, settings);
+    sf::RenderWindow window(sf::VideoMode(1280, 720), "RPG", sf::Style::Default, settings);
 
-    const int charSpriteSize = 16;
     sf::Clock clock;
     window.setFramerateLimit(60);
-
-    // Initializing objects
-    std::vector<sf::Sprite> bullets;
-    bullets.reserve(100);
 
     Player player;
     player.Load();
@@ -29,7 +25,6 @@ int main()
     skeleton.dir += "Skeleton/Spritesheet.png";
     skeleton.name = "Skeleton";
     skeleton.Load();
-
 
 
     // Game Loop
@@ -54,6 +49,11 @@ int main()
         // Telling what to render
         player.Draw(window);
         skeleton.Draw(window);
+
+		// Checking collision
+		if (Math::CheckCollision(player.boundingRect.getGlobalBounds(), skeleton.boundingRect.getGlobalBounds())) {
+			std::cout << "Collision Detected" << '\n';
+		}
 
         // Rendering
         window.display();
