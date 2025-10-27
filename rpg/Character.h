@@ -31,7 +31,8 @@ public:
     std::string dir;
     char currentDirection;
     bool isMoving;
-    sf::RectangleShape boundingRect;
+    sf::RectangleShape hitbox;
+    void SetPosition(float x, float y);
 
 
     enum State {
@@ -45,4 +46,6 @@ public:
         SPECIAL2
     };
     State currentState;
+
+    State previousState;
 };

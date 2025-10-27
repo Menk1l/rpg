@@ -1,29 +1,29 @@
 ﻿  Character.cpp
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(29,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(29,16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(32,77): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(32,77): warning C4244:         with
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(32,77): warning C4244:         [
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(32,77): warning C4244:             T=float
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(32,77): warning C4244:         ]
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(32,48): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(32,48): warning C4244:         with
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(32,48): warning C4244:         [
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(32,48): warning C4244:             T=float
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(32,48): warning C4244:         ]
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(44,29): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(44,29): warning C4244:         with
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(44,29): warning C4244:         [
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(44,29): warning C4244:             T=float
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(44,29): warning C4244:         ]
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(45,29): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(45,29): warning C4244:         with
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(45,29): warning C4244:         [
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(45,29): warning C4244:             T=float
-C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(45,29): warning C4244:         ]
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(32,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(32,16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(35,90): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(35,90): warning C4244:         with
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(35,90): warning C4244:         [
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(35,90): warning C4244:             T=float
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(35,90): warning C4244:         ]
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(35,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(35,42): warning C4244:         with
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(35,42): warning C4244:         [
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(35,42): warning C4244:             T=float
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(35,42): warning C4244:         ]
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(54,29): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(54,29): warning C4244:         with
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(54,29): warning C4244:         [
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(54,29): warning C4244:             T=float
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(54,29): warning C4244:         ]
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(55,29): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(55,29): warning C4244:         with
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(55,29): warning C4244:         [
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(55,29): warning C4244:             T=float
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(55,29): warning C4244:         ]
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(56,20): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\menk1l\Documents\Code\C++\rpg\rpg\Character.cpp(56,14): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   main.cpp
-  Math.cpp
-  Player.cpp
   Generating Code...
 sfml-graphics-s-d.lib(Transformable.obj) : warning LNK4099: PDB 'sfml-graphics-s.pdb' was not found with 'sfml-graphics-s-d.lib(Transformable.obj)' or at 'C:\Users\menk1l\Documents\Code\C++\rpg\x64\Debug\sfml-graphics-s.pdb'; linking object as if no debug info
 sfml-graphics-s-d.lib(Shape.obj) : warning LNK4099: PDB 'sfml-graphics-s.pdb' was not found with 'sfml-graphics-s-d.lib(Shape.obj)' or at 'C:\Users\menk1l\Documents\Code\C++\rpg\x64\Debug\sfml-graphics-s.pdb'; linking object as if no debug info

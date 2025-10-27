@@ -5,9 +5,6 @@
 #include "Player.h"
 #include "Math.h"
 
-// Functions
-void move(char key, Character& player);
-
 // Main
 int main()
 {
@@ -16,7 +13,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(1280, 720), "RPG", sf::Style::Default, settings);
 
     sf::Clock clock;
-    window.setFramerateLimit(60);
+	window.setVerticalSyncEnabled(true);
 
     Player player;
     player.Load();
@@ -25,6 +22,7 @@ int main()
     skeleton.dir += "Skeleton/Spritesheet.png";
     skeleton.name = "Skeleton";
     skeleton.Load();
+	skeleton.SetPosition(600.0f, 300.0f);
 
 
     // Game Loop
@@ -40,18 +38,20 @@ int main()
         sf::Time deltaTimer = clock.restart();
         float deltaTime = deltaTimer.asSeconds();
 
-        // Handeling player logic
-        player.Update(deltaTime);
-
         // Clearing backround
         window.clear(sf::Color(20, 10, 30, 255));
 
+        // Handeling player logic
+        player.Update(deltaTime);
+        // Handeling enemy logic
+        skeleton.Update(deltaTime);
+
         // Telling what to render
-        player.Draw(window);
         skeleton.Draw(window);
+        player.Draw(window);
 
 		// Checking collision
-		if (Math::CheckCollision(player.boundingRect.getGlobalBounds(), skeleton.boundingRect.getGlobalBounds())) {
+		if (Math::CheckCollision(player.hitbox.getGlobalBounds(), skeleton.hitbox.getGlobalBounds())) {
 			std::cout << "Collision Detected" << '\n';
 		}
 

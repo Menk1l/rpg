@@ -19,6 +19,9 @@ Character::Character() {
 	currentDirection = 'D';
 	isMoving = false;
 	currentFrame = 0;
+	stateTimer = 0.0f;
+	animationTimer = 0.0f;
+	previousState = IDLE;
 }
 
 void Character::Load() {
@@ -29,27 +32,36 @@ void Character::Load() {
 		sprite.scale(sizeMultiplier , sizeMultiplier);
 		
 		// Collision rectangle
-		boundingRect.setSize(sf::Vector2f(spriteSize * sizeMultiplier, spriteSize * sizeMultiplier));
-		boundingRect.setFillColor(sf::Color::Transparent);
-		boundingRect.setOutlineColor(sf::Color::Red);
-		boundingRect.setOutlineThickness(1);
+		hitbox.setSize(sf::Vector2f(spriteSize * sizeMultiplier, (spriteSize * sizeMultiplier) / 4));
+		hitbox.setFillColor(sf::Color::Transparent);
+		hitbox.setOutlineColor(sf::Color::Red);
+		hitbox.setOutlineThickness(1);
 	}
 	else std::cout << name << " texture failed load" << '\n';
 }
 
+void Character::SetPosition(float x, float y) {
+	sprite.setPosition(x, y);
+	// Moves the hitbox
+	sf::Vector2f pos = sprite.getPosition();
+	pos.y += (12 * sizeMultiplier);
+	hitbox.setPosition(pos);
+
+}
+
 void Character::Update(float deltaTime) {
 	// Saving positions
-	sf::Vector2f pos = sprite.getPosition();
-	boundingRect.setPosition(pos);
 	Xpos = sprite.getPosition().x;
 	Ypos = sprite.getPosition().y;
+	SetPosition(Xpos, Ypos);
 
-
-	static State previousState = IDLE;
 
 	// Reset state timer when state changes
 	if (currentState != previousState) {
 		stateTimer = 0.0f;
+		// Reset animation timing/frame so each state's animation starts consistently
+		animationTimer = 0.0f;
+		currentFrame = 0;
 		previousState = currentState;
 	}
 
@@ -94,7 +106,7 @@ void Character::Update(float deltaTime) {
 
 void Character::Draw(sf::RenderWindow& window) {
 	window.draw(sprite);
-	window.draw(boundingRect);
+	window.draw(hitbox);
 };
 
 void Character::Animation(float deltaTime, int frames, int Ypos) {
